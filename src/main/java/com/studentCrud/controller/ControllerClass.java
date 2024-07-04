@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,7 +30,7 @@ public class ControllerClass {
 	private StudentService studentService;
 
 	// storing person details in database
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/save")
 	public ResponseEntity<Map<String, Object>> saveMethod(@RequestBody @Valid Student student) {
 		Map<String, Object> mapObj = new HashMap<>();
@@ -51,7 +51,7 @@ public class ControllerClass {
 	}
 
 	// fetching specific person details
-	@PreAuthorize("hasRole('USER')")
+	//@PreAuthorize("hasRole('USER')")
 	@GetMapping("/getSpecific/{id}")
 	public ResponseEntity<Map<String, Object>> fetchSpecific(@PathVariable int id)// throws StudentNotFoundException
 	{
