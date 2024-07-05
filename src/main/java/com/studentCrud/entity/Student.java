@@ -1,6 +1,6 @@
 package com.studentCrud.entity;
 
-import org.hibernate.validator.constraints.UniqueElements;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +30,12 @@ public class Student {
 	@NotBlank(message = "student name is must")
 	String stuentName;
 	@NotEmpty(message = "collegeName is mandatory")
+	
 	String collegeName;
+	@NotBlank(message = "state is must")
+	String state;
+	List<String> skills;
+	@NotBlank(message = "gender is must")
+	String gender;
 
 }
