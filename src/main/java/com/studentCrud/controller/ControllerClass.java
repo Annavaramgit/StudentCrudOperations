@@ -20,9 +20,11 @@ import com.studentCrud.entity.Student;
 import com.studentCrud.service.StudentService;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @CrossOrigin(origins = "*",allowedHeaders = "*")
+@Slf4j
 public class ControllerClass {
 
 	@Autowired
@@ -44,6 +46,7 @@ public class ControllerClass {
 	// fetching all persons details
 	@GetMapping("/getAll")
 	public ResponseEntity<List<Student>> fetchingAll() {
+		log.info("fetchAll invoked...");
 		List<Student> students = studentService.fetchingAll();
 		return new ResponseEntity<List<Student>>(students, HttpStatus.OK);
 
@@ -101,6 +104,10 @@ public class ControllerClass {
 		mapObj.put("Result", "Updated Successfully Please check In DB");
 
 		return new ResponseEntity<Map<String, String>>(mapObj, HttpStatus.OK);
+	}
+	@GetMapping("/hello")
+	public String hello() {
+		return "this is hello method!!";
 	}
 
 }

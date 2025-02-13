@@ -24,7 +24,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
 	@Min(100)
-	@Max(600)
+	//@Max(600)
 	
 	int studentHallTicket;
 	@NotBlank(message = "student name is must")
